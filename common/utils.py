@@ -75,7 +75,7 @@ def getPatch(img, bbox, point, padding):
     patch_right = point_x + bbox.w * padding
     patch_top = point_y - bbox.h * padding
     patch_bottom = point_y + bbox.h * padding
-    patch = img[patch_top: patch_bottom+1, patch_left: patch_right+1]
+    patch = img[int(patch_top): int(patch_bottom)+1, int(patch_left): int(patch_right)+1]
     patch_bbox = BBox([patch_left, patch_right, patch_top, patch_bottom])
     return patch, patch_bbox
 
