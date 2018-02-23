@@ -40,7 +40,7 @@ def generate_hdf5(ftxt, output, fname, argument=False):
         logger("process %s" % imgPath)
         # F
         f_bbox = bbox.subBBox(-0.05, 1.05, -0.05, 1.05)
-        f_face = img[int(f_bbox.top):int(f_bbox.bottom)+1,int(f_bbox.left):int(f_bbox.right)+1]
+        f_face = img[f_bbox.top:f_bbox.bottom+1,f_bbox.left:f_bbox.right+1]
 
         ## data argument
         if argument and np.random.rand() > -1:

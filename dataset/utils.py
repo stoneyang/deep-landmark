@@ -31,7 +31,7 @@ def rotate(img, bbox, landmark, alpha):
     img_rotated_by_alpha = cv2.warpAffine(img, rot_mat, img.shape)
     landmark_ = np.asarray([(rot_mat[0][0]*x+rot_mat[0][1]*y+rot_mat[0][2],
                  rot_mat[1][0]*x+rot_mat[1][1]*y+rot_mat[1][2]) for (x, y) in landmark])
-    face = img_rotated_by_alpha[int(bbox.top):int(bbox.bottom)+1,int(bbox.left):int(bbox.right)+1]
+    face = img_rotated_by_alpha[bbox.top:bbox.bottom+1,bbox.left:bbox.right+1]
     return (face, landmark_)
 
 
